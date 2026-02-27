@@ -1,0 +1,82 @@
+.howItWorks {
+    position: relative;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-blue), var(--accent-violet), transparent);
+}
+
+.step {
+    flex: 1;
+    max-width: 320px;
+    text-align: center;
+    padding: 32px 24px;
+    position: relative;
+}
+
+.stepNumber {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 24px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+.stepIcon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.stepTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.stepDesc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline::before {
+        width: 2px;
+        height: 80%;
+        top: 20px;
+        left: 50%;
+    }
+
+    .step {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,135 @@
+.innovation {
+    position: relative;
+    overflow: hidden;
+}
+
+.innovationInner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.innovationContent h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.innovationContent h2 span {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.innovationIntro {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 36px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 32px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-violet), transparent);
+}
+
+.timelineItem {
+    position: relative;
+    padding-bottom: 28px;
+    padding-left: 20px;
+}
+
+.timelineItem:last-child {
+    padding-bottom: 0;
+}
+
+.timelineDot {
+    position: absolute;
+    left: -38px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+.timelineYear {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+}
+
+.timelineItem h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.timelineItem p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.innovationImage {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.innovationImage img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.innovationGlow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.orbInnovation {
+    width: 350px;
+    height: 350px;
+    bottom: -100px;
+    right: -100px;
+}
+
+@media (max-width: 1024px) {
+    .innovationInner {
+        grid-template-columns: 1fr;
+    }
+
+    .innovationImage {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .innovationContent h2 {
+        font-size: 1.75rem;
+    }
+}

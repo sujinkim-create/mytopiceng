@@ -1,0 +1,184 @@
+.partnership {
+    position: relative;
+    background: var(--bg-secondary);
+    overflow: hidden;
+}
+
+.partnershipInner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.partnershipContent h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.partnershipContent h2 span {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.partnershipIntro {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.partnerGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.partnerItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+}
+
+.partnerIcon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    margin-top: -4px;
+}
+
+.partnerText h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.partnerText p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.visualSide {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.networkVisual {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centralNode {
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+    z-index: 2;
+    position: relative;
+}
+
+.floatingNode {
+    position: absolute;
+    padding: 12px 20px;
+    background: rgba(10, 14, 26, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.floatingNode::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.node1 {
+    top: 15%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.node2 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.node3 {
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.node4 {
+    bottom: 15%;
+    right: 15%;
+    animation-delay: 3s;
+}
+
+.connectionLine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(to top, rgba(59, 130, 246, 0.5), transparent);
+    transform-origin: bottom center;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .partnershipInner {
+        grid-template-columns: 1fr;
+    }
+
+    .visualSide {
+        height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .partnerGrid {
+        grid-template-columns: 1fr;
+    }
+}
